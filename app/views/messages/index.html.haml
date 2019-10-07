@@ -1,0 +1,49 @@
+.wrapper
+  .left-side
+    .left-header
+      .left-header__box
+        .left-header__box__user-name
+          junya
+        .left-header__box__menu
+          .left-header__box__menu__new-group
+            =link_to do
+              = fa_icon "edit", class: 'icon'
+          .left-header__box__menu__edit-user
+            =link_to do
+              = fa_icon "cog", class: 'icon'
+    .groups
+      .group
+        .group__name
+          junya
+        .group__latest-message
+          aです
+
+  .right-side
+    .right-header
+      .right-header__left-box
+        .right-header__left-box__current-group
+          current-group
+        .right-header__left-box__member-list
+          Member :
+          .right-header__left-box__member-list__menber
+            name
+      =link_to "#" , class: "edit-btn" do
+        .right-header__edit-btn
+          Edit
+    .chat
+      .message
+        .message__upper-info
+          .message__upper-info__user
+            ユーザー名
+          .message__upper-info__date
+            投稿日時
+        .message__text
+          本文
+    .footer
+      %form.new-message{enctype: 'multipart/form-data', action: '/groups/1910/messages', charset:"UTF-8", method: 'post'}
+        .input-box
+          %input.input-box__text{placeholder: 'type a message', type: 'text', name: 'message[content]'}
+          %label.input-box__image{for: 'message_image'}
+            =fa_icon 'image'
+            %input.input-box__image__file{type: 'file',id:'message_image'} 
+        %input.submit-btn{type: 'submit', value:'Send'}
