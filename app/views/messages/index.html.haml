@@ -1,22 +1,6 @@
 .wrapper
-  .left-side
-    .left-header
-      .left-header__box
-        .left-header__box__user-name
-          junya
-        .left-header__box__menu
-          .left-header__box__menu__new-group
-            =link_to do
-              = fa_icon "edit", class: 'icon'
-          .left-header__box__menu__edit-user
-            =link_to do
-              = fa_icon "cog", class: 'icon'
-    .groups
-      .group
-        .group__name
-          junya
-        .group__latest-message
-          aです
+
+  = render partial: 'shared/side_bar'
 
   .right-side
     .right-header
