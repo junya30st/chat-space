@@ -14,29 +14,21 @@
       =link_to "#" , class: "edit-btn" do
         .right-header__edit-btn
           Edit
+
     .chat
-      .message
-        .message__upper-info
-          .message__upper-info__user
-            ユーザー名
-          .message__upper-info__date
-            投稿日時
-        .message__text
-          本文
+      = render @messages
+      -# = render partial: 'message', collection: @messages
+
     .footer
-      = form for [@group, @message] do |f|
+      = form_for [@group, @message] do |f|
         .new-message
           .input-box
             = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-            = f.label :image, class: 'input-box__image'
+            = f.label :image, class: 'input-box__image' do
               = fa_icon 'image'
               = f.file_field :image, class: 'input-box__image__file'
-          = f.submit 'Send', class 'submit-btn'
-
-
-
-
-
+          = f.submit 'Send', class: 'submit-btn'
+          
       -# %form.new-message
       -#   .input-box
       -#     %input.input-box__text{placeholder: 'type a message', type: 'text', name: 'message[content]'}

@@ -1,35 +1,38 @@
-.form {
-  background-color: #DDDDDD;
-  box-sizing: border-box;
+.footer{
+  background-color: #ddd;
   height: 90px;
-  padding: 20px 50px 20px 40px;
-  &__message {
-    border: none;
-    float: left;
-    height: 50px;
-    width: calc(100% - 150px);
-  }
-  &__mask {
-    background-color: white;
-    float: left;
-    height: 50px;
-    padding-right: 10px;
-    &__image {
-      font-size: 20px;
-      line-height: 50px;
+  padding: 20px 40px;
+  .new-message{
+    display: flex;
+    .input-box{
+      position: relative;
+      width: 100% ;
+      &__text{
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434A54;
+        border-style: none;
+      }
+      &__image{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.3rem;
+        cursor: pointer;
+        &__file{
+          display: none;
+        }
+      } 
     }
-    .hidden {
-      display: none;
+    .submit-btn{
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: $sky;
+      color: white;
+      cursor: pointer;
     }
-  }
-  &__submit {
-    background-color: $sky;
-    border: none;
-    color: white;
-    float: right;
-    font-size: 16px;
-    height: 50px;
-    margin-left: 15px;
-    padding: 0 30px;
   }
 }
