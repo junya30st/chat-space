@@ -34,7 +34,7 @@ $(function(){
       .done(function(data){
         var html = buildHTML(data);
         $('.chat').append(html);
-        $('.input-box__text').val("");
+        $('form')[0].reset();
         $('.chat').animate({ scrollTop: $('.chat')[0].scrollHeight});
       })
       .fail(function(){
