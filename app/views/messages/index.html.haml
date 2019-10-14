@@ -6,11 +6,12 @@
     .right-header
       .right-header__left-box
         .right-header__left-box__current-group
-          current-group
+          = @group.name
         .right-header__left-box__member-list
           Member :
           .right-header__left-box__member-list__menber
-            name
+            - @group.users.each do |user|
+              = user.name
       =link_to "#" , class: "edit-btn" do
         .right-header__edit-btn
           Edit
@@ -28,20 +29,3 @@
               = fa_icon 'image'
               = f.file_field :image, class: 'input-box__image__file'
           = f.submit 'Send', class: 'submit-btn'
-          
-      -# %form.new-message
-      -#   .input-box
-      -#     %input.input-box__text{placeholder: 'type a message', type: 'text', name: 'message[content]'}
-      -#     %label.input-box__image{for: 'message_image'}
-      -#       =fa_icon 'image'
-      -#       %input.input-box__image__file{type: 'file',id:'message_image'} 
-      -#   %input.submit-btn{type: 'submit', value:'Send'}
- 
-    -# .form
-    -#   %form
-    -#     %input.form__message
-    -#     .form__mask
-    -#       %label.form__mask__image
-    -#         = fa_icon 'picture-o', class: 'icon'
-    -#         %input.hidden{type: 'file'}
-    -#     %input.form__submit{type: 'submit', value: 'Send'}
