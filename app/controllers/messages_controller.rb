@@ -19,11 +19,6 @@ class MessagesController < ApplicationController
         render :index
     end
   end
-
-  def search
-    
-  end
-
   
   private
 

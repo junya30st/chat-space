@@ -7,12 +7,11 @@ $(document).on('turbolinks:load', function() {
                   <p class="chat-group-user__name">${user.name}</p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>`
-
     $(search_list).append(html)
   };
 
   function appendErrMsgToHTML(){
-    var html =``
+    var html =`一致するユーザーはいません`
     $(search_list).append(html)
   };
 
@@ -40,9 +39,8 @@ $(document).on('turbolinks:load', function() {
           appendUser(user);
         });
       }
-      else{
-        appendErrMsgToHTML("一致するユーザーはいません");
-      }
+      else 
+        appendErrMsgToHTML();   
     })
     .fail(function(){
       alert('ユーザー検索に失敗しました');
@@ -50,13 +48,12 @@ $(document).on('turbolinks:load', function() {
   })
   $(document).on("click",".chat-group-user__btn--add", function(e){
     e.preventDefault();
-    var id = $(this).attr('data-user-id');
-    var name = $(this).attr('data-user-name');
+    var id = $(this).data('user-id');
+    var name = $(this).data('user-name');
     appendMenber(id, name);
     $(this).parent().remove();
   })
   $(document).on("click",".chat-group-user__btn--remove.js-remove-btn", function(){
-    console.log(this)
     $(this).parent().remove();
   })
 })
