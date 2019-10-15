@@ -12,9 +12,8 @@
           .right-header__left-box__member-list__menber
             - @group.users.each do |user|
               = user.name
-      =link_to "#" , class: "edit-btn" do
-        .right-header__edit-btn
-          Edit
+      .right-header__edit-btn
+        =link_to "Edit" , edit_group_path(@group)
 
     .chat
       = render @messages
