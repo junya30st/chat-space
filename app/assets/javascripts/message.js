@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
     function buildHTML(message){
         var imagehtml = message.image ? `<image class="message__text__image" src=${message.image}>` : "" ;
         var html = `<div class="message" data-id="${message.id}">
@@ -37,7 +37,7 @@ $(function(){
         var html = buildHTML(data);
         $('.chat').append(html);
         $('form')[0].reset();
-        $('.chat').animate({ scrollTop: $('.chat')[0].scrollHeight});
+        $('.chat').animate({ scrollTop: $('.chat')[0].scrollHeight},'fast');
       })
 
       .fail(function(){
@@ -63,7 +63,7 @@ $(function(){
           messages.forEach(function(message){
           insertHTML = buildHTML(message);
           $('.chat').append(insertHTML);
-          $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight});
+          $('.chat').animate({scrollTop: $('.chat')[0].scrollHeight},'fast');
           })
         })
         .fail(function() {
