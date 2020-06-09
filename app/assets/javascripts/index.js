@@ -32,7 +32,8 @@ $(document).on('turbolinks:load', function() {
       data: {name: input},
       dataType: 'json'
     })
-    .done(function(users){
+    .done(function(){
+      console.log(this)
       $('#user-search-result').empty();
       if (users.length !== 0){
         users.forEach(function(user){
