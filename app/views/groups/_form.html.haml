@@ -24,9 +24,6 @@
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       .chat-group-users.js-add-user
-        -# .chat-group-user.clearfix.js-chat-member{value: current_user.id}
-        -#   %p.chat-group-user__name
-        -#   = current_user.name
       - group.users.each do |user|
         .chat-group-user.clearfix.js-chat-member
           %input{ type: "hidden", name: "group[user_ids][]", value: user.id }
