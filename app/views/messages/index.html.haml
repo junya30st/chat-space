@@ -17,7 +17,6 @@
 
     .chat
       = render @messages
-      -# = render partial: 'message', collection: @messages
 
     .footer
       = form_for [@group, @message] do |f|
